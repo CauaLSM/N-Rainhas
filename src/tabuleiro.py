@@ -19,5 +19,5 @@ def printar_tabuleiro(estado):
     for linha in range(n):
         linha_visual = ['.'] * n
         linha_visual[estado[linha]] = 'Q'
-        print(' '.join(linha))
+        print(' '.join(linha_visual))
     print()
