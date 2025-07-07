@@ -1,4 +1,6 @@
 from tabuleiro import criar_estado_inicial, contar_conflitos, printar_tabuleiro
+from busca_HC import hill_climbing_com_reinicio
+
 
 def main():
     n = int(input("Digite o tamanho do tabuleiro (n): "))
@@ -15,6 +17,12 @@ def main():
     print("\n=== Estado Inicial ===")
     printar_tabuleiro(estado)
     print("Conflitos iniciais:", contar_conflitos(estado), "\n")
+
+    solucao_busca = hill_climbing_com_reinicio(n)
+    print("=== Após Busca (Hill Climbing) ===")
+    printar_tabuleiro(solucao_busca)
+    conflitos_busca = contar_conflitos(solucao_busca)
+    print("Conflitos após busca:", conflitos_busca, "\n")
 
 if __name__ == "__main__":
     main()
